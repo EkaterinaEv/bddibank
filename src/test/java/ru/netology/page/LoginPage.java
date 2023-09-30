@@ -8,7 +8,7 @@ public class LoginPage {
     public VerificationPage validLogin(DataHelper.AuthInfo info) {
         $("[data-test-id=login] input").setValue(info.getLogin());
         $("[data-test-id=password] input").setValue(info.getPassword());
-        $("[data-test-id=action-login] input").click();
+        $("[data-test-id=action-login] button").click();
         return new VerificationPage();
     }
 }
