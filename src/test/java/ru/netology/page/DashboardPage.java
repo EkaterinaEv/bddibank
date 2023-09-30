@@ -1,12 +1,20 @@
 package ru.netology.page;
 
 import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
 import lombok.val;
 
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static java.awt.SystemColor.text;
 
-//public class DashboardPage {
+public class DashboardPage {
+    private SelenideElement header = $("[data-test-id=dashboard]");
+
+    public DashboardPage(){
+        header.shouldBe(visible);
+    }
 //    // к сожалению, разработчики не дали нам удобного селектора, поэтому так
 //    private ElementsCollection cards = $$(".list__item div");
 //    private final String balanceStart = "баланс: ";
@@ -26,4 +34,4 @@ import static java.awt.SystemColor.text;
 //        val value = text.substring(start + balanceStart.length(), finish);
 //        return Integer.parseInt(value);
 //    }
-//}
+}
